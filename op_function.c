@@ -1,6 +1,63 @@
 #include "monty.h"
 
 /**
+ * print_dlistint - print_dlistint
+ * @h: head
+ * Return: 0
+ */
+
+int print_dlistint(const stack_t *h)
+
+{
+	const stack_t *ptr;
+	int i;
+
+	i = 0;
+	ptr = h;
+
+	while (ptr != NULL)
+
+	{
+		printf("%d\n", ptr->n);
+		ptr = ptr->next;
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * add_dnodeint - add_dnodeint
+ * @head: head
+ * @n: int
+ * Return: 0
+ */
+
+stack_t *add_dnodeint(stack_t **head, int n)
+
+{
+	stack_t *new;
+
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+
+	{
+		ERR_malloc();
+		return (NULL);
+	}
+	if (*head == NULL)
+		new->next = NULL;
+	else
+	{
+		new->next = *head;
+		(*head)->prev = new;
+	}
+	new->prev = NULL;
+	new->n = n;
+	*head = new;
+	return (new);
+}
+
+/**
  * f_push - f_push
  * @stack: stack
  * @line_number: line number

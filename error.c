@@ -41,6 +41,23 @@ int ERR_push(unsigned int line_number)
 }
 
 /**
+ *
+ *  * ERR_pint - ERR_pint
+ *
+ *   * @line_number: line number
+ *
+ *    * Return: 0
+ *
+ *     */
+
+int ERR_pint(unsigned int line_number)
+
+{
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	free_Full(-1);
+	return (EXIT_FAILURE);
+}
+/**
  * ERR_invalid- ERR_invalid
  * @line_number: line number
  * @opcode: opcode

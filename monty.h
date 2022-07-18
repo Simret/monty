@@ -39,17 +39,22 @@ typedef struct instruction_s
 
 int ERR;
 char **TB;
+FILE *FP;
+char *BUFFER;
 stack_t *STACK;
 
 int print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, int n);
 void f_push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number);
+void f_pint(stack_t **stack, unsigned int line_number);
 void push_pall(stack_t **top, unsigned int line_num);
 void free_z(stack_t *st);
 int ERR_f_open(char *file_n);
 int ERR_arg(void);
 int ERR_push(unsigned int line_number);
+int ERR_pint(unsigned int line_number)
 int ERR_invalid(unsigned int line_number, char *opcode);
+int ERR_malloc(void);
 
 #endif
