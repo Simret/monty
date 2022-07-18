@@ -42,7 +42,7 @@ void f_push(stack_t **stack, unsigned int line_number)
  * Return: void
  */
 
-void f_pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 
 {
 	stack_t *ptr;
