@@ -38,6 +38,8 @@ typedef struct instruction_s
 } instruction_t;
 
 int ERR;
+char **TB;
+stack_t *STACK;
 
 int print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, int n);
